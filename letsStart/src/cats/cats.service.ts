@@ -1,5 +1,5 @@
-import { Request, Response } from 'express';
-import { Cat, CatType } from './cats.model';
+import {Request, Response} from "express";
+import {Cat} from "./app.model";
 
 //* READ 고양이 전체 데이터 다 조회 -> GET
 export const readAllcat = (req: Request, res: Response) => {
