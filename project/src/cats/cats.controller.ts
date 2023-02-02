@@ -11,6 +11,7 @@ import {
 } from '@nestjs/common';
 import { CatsService } from './cats.service';
 import { HttpExceptionFilter } from 'src/http-exception.filter';
+import { PositivePipe } from '../common/pipes/positive.pipe';
 
 @Controller('cats')
 @UseFilters(HttpExceptionFilter)
@@ -24,7 +25,7 @@ export class CatsController {
   }
 
   @Get(':id')
-  getOneCat(@Param('id', ParseIntPipe) param: number) {
+  getOneCat(@Param('id', ParseIntPipe, PositivePipe) param: number) {
     console.log(param);
     console.log(typeof param);
     return 'one cat';
