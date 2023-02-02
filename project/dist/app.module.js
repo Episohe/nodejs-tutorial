@@ -11,7 +11,7 @@ const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const cats_module_1 = require("./cats/cats.module");
-const logger_middleware_1 = require("./logger.middleware");
+const logger_middleware_1 = require("./common/middlewares/logger.middleware");
 let AppModule = class AppModule {
     configure(consumer) {
         consumer.apply(logger_middleware_1.LoggerMiddleware).forRoutes('cats');
